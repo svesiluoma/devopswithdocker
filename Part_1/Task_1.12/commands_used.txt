@@ -1,0 +1,2 @@
+# Build the images
+docker build -t frontend -f frontend .
