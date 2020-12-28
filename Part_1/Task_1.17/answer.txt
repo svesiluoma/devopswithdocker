@@ -4,4 +4,4 @@ I am mainly programming with Python, so establishing a Python environment based 
 python:3.8, defining the virtual environment settings and ensuring that some of my
 main libraries have been installed.
 
-Run e.g. docker run -it --rm python_env
+Run e.g. docker run -it --rm svesiluoma/python_env
