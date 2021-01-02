@@ -1,0 +1,17 @@
+version: '3.5' 
+
+services: 
+    frontend:  
+      build: frontend/.
+      ports:
+        - 5000:5000
+
+    backend:
+      build: backend/.
+      ports:
+        - 8000:8000
+      environment:
+        - REDIS=redis_addition
+
+    redis_addition:
+      image: redis
