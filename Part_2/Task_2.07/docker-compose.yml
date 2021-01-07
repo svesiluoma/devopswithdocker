@@ -1,25 +1,23 @@
-version: '3.5' 
+version: '3.5'
 
-services: 
-    ml-kurkkumopo-frontend:  
-      build: ml-kurkkumopo-frontend/.
-      ports:
-        - 3000:3000
-
-    ml-kurkkumopo-backend:
-      build: ml-kurkkumopo-backend/.
-      ports:
-        - 5000:5000
-      volumes:
-        - model:/src/model
-      depends_on:
-       - ml-kurkkumopo-training
-
-    ml-kurkkumopo-training:
-      build: ml-kurkkumopo-training/.
-      volumes:
-        - model:/src/model
-        - imgs:/src/imgs
+services:
+    frontend:
+        build: https://github.com/docker-hy/ml-kurkkumopo-frontend.git
+        ports: 
+          - 3000:3000
+    backend:
+        build: https://github.com/docker-hy/ml-kurkkumopo-backend.git 
+        ports:
+          - 5000:5000
+        volumes:
+          - model:/src/model
+        depends_on:
+          - training
+    training:
+        build: https://github.com/docker-hy/ml-kurkkumopo-training.git
+        volumes:
+          - model:/src/model
+          - imgs:/src/imgs
 
 volumes:
     model:
