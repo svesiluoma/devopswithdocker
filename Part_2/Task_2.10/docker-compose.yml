@@ -1,24 +1,27 @@
-version: '3.5' 
+version: '3.8' 
 
 services: 
     frontend:  
       build: frontend/.
+      environment:
+        - API_URL=http://localhost/api
 
     backend:
       build: backend/.
       environment:
-        - REDIS=redis_addition
-        - DB_USERNAME=db_user
-        - DB_PASSWORD=example
-        - DB_HOST=db
+        - FRONT_URL=frontend
+        - REDIS_HOST=redis_addition
+        - POSTGRES_USER=db_user
+        - POSTGRES_PASSWORD=example
+        - POSTGRES_HOST=db
       depends_on:
         - db
         - redis_addition
 
     redis_addition:
       image: redis
-      volumes: 
-       - ./redis:/data
+      volumes:
+        - ./redis:/data
 
     db:
       image: postgres

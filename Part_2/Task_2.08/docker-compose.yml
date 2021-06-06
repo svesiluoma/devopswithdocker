@@ -14,7 +14,7 @@ services:
         - REDIS=redis_addition
         - POSTGRES_USER=db_user
         - POSTGRES_PASSWORD=example
-        - POSTGRES_DB=db
+        - POSTGRES_HOST=db
       depends_on:
         - db
         - redis_addition

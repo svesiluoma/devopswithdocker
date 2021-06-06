@@ -21,7 +21,7 @@ COPY . /usr/src/app
 RUN npm install 
 
 # Environment variables
-ENV REACT_APP_BACKEND_URL=http://localhost:8080
+#ENV REACT_APP_BACKEND_URL=http://localhost:8080
 
 # Build the static files
 RUN npm run build
