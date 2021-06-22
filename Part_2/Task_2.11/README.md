@@ -18,5 +18,5 @@ environment for a project I am planning to do next. Because of that, I am trying
 11. Try http://localhost:8000/
 
 
-Because I have not created django environments before, I had to google and one good source was this: 
+Because I have not created django environments before, I had to google and I followed quite much this source: 
 https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
